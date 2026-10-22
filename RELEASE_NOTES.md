@@ -1,7 +1,8 @@
-KunioFeedback 0.1.0 is the first native iOS feedback board SDK for Kunio.
+KunioFeedback 0.1.1 improves the native board controls.
 
-Install in Xcode using https://github.com/kunio-app/kunio-feedback-ios.git and version 0.1.0. Add the KunioFeedback library to your app target, configure your public board key, and present KunioFeedbackBoard().
+- Top-left X button dismisses the feedback board.
+- Status filtering remains available in the right toolbar next to the add button.
+- The empty-state Suggest a feature button is wider and taller, with headline text and native large prominent button styling.
+- Includes English and German accessibility labels for the close action.
 
-Includes feature submissions, search, moderation synchronization, status filters, voting, English and German localization, and Keychain-backed anonymous access. Requires iOS 17 or later. No external dependencies.
-
-Validation: six Swift transport tests passed; generic iOS Simulator build passed.
+In Xcode, choose File → Packages → Update to Latest Package Versions. If your dependency is pinned to an exact version, select 0.1.1.

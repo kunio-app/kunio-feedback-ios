@@ -1,10 +1,10 @@
-# KunioFeedback · 0.1.0
+# KunioFeedback · 0.1.1
 
 A native, moderated feature wishlist for iOS 17+. No external dependencies, web views, end-user registration or customer backend required.
 
 ## Install
 
-In Xcode choose **File → Add Package Dependencies**, paste this repository URL, select **Up to Next Major Version** starting at **0.1.0**, and add the **KunioFeedback** product to your app target.
+In Xcode choose **File → Add Package Dependencies**, paste this repository URL, select **Up to Next Major Version** starting at **0.1.1**, and add the **KunioFeedback** product to your app target.
 
 ```text
 https://github.com/kunio-app/kunio-feedback-ios.git
@@ -13,7 +13,7 @@ https://github.com/kunio-app/kunio-feedback-ios.git
 For a Swift package, add:
 
 ```swift
-.package(url: "https://github.com/kunio-app/kunio-feedback-ios.git", from: "0.1.0")
+.package(url: "https://github.com/kunio-app/kunio-feedback-ios.git", from: "0.1.1")
 ```
 
 Then add `.product(name: "KunioFeedback", package: "kunio-feedback-ios")` to your target dependencies. Create a feedback board in Kunio and copy its public board key from **Feedback → Installation**.

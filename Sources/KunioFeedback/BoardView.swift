@@ -5,6 +5,7 @@ import SwiftUI
 @MainActor public struct KunioFeedbackBoard: View {
     @State private var model = FeedbackBoardModel()
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.dismiss) private var dismiss
     public init() {}
     public var body: some View {
         NavigationStack {
@@ -44,7 +45,17 @@ import SwiftUI
                         ContentUnavailableView {
                             Label(feedbackText(model.search.isEmpty ? "What should we build next?" : "No matching wishes"), systemImage: "bubble.left.and.bubble.right")
                         } description: { Text(feedbackText(model.search.isEmpty ? "Share an idea or vote for a feature you would love to see." : "Try another search or suggest a new feature.")) }
-                        actions: { Button(feedbackText("Suggest a feature")) { model.showComposer = true }.buttonStyle(.borderedProminent).disabled(model.board == nil || model.paused) }
+                        actions: {
+                            Button { model.submissionError = nil; model.showComposer = true } label: {
+                                Text(feedbackText("Suggest a feature"))
+                                    .font(.headline)
+                                    .frame(minWidth: 220, minHeight: 28)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .controlSize(.large)
+                            .buttonBorderShape(.capsule)
+                            .disabled(model.board == nil || model.paused)
+                        }
                         .padding(.vertical, 28)
                     }
                     ForEach(model.wishes) { wish in WishRow(wish: wish, model: model) }
@@ -60,6 +71,10 @@ import SwiftUI
             .searchable(text: $model.search, prompt: Text(feedbackText("Search wishes")))
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
+                    Button { dismiss() } label: { Image(systemName: "xmark").fontWeight(.semibold) }
+                        .accessibilityLabel(feedbackText("Close board"))
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Menu {
                         Button(feedbackText("All statuses")) { model.status = nil }
                         ForEach(WishStatus.allCases, id: \.self) { status in

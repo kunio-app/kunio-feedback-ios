@@ -108,7 +108,7 @@ public actor KunioFeedbackClient {
     public func submit(title: String, description: String = "", requestID: UUID = UUID(), appVersion: String? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) async throws -> FeatureWish {
         let title = title.trimmingCharacters(in: .whitespacesAndNewlines), body = description.trimmingCharacters(in: .whitespacesAndNewlines)
         guard (3...120).contains(title.utf16.count), body.utf16.count <= 4000 else { throw KunioFeedbackError.server("feedback_invalid") }
-        var context = ["sdk_version": "0.1.0", "os_version": ProcessInfo.processInfo.operatingSystemVersionString, "locale": Locale.current.identifier]
+        var context = ["sdk_version": "0.1.1", "os_version": ProcessInfo.processInfo.operatingSystemVersionString, "locale": Locale.current.identifier]
         if let appVersion { context["app_version"] = appVersion }
         context = context.mapValues { String($0.prefix(64)) }
         let result: WishResponse = try await authenticated(["action": "submit", "client_request_id": requestID.uuidString, "title": title, "body": body, "context": context])
