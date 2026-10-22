@@ -4,6 +4,7 @@ import SwiftUI
 /// A complete native board, including navigation. Present directly in a sheet or as a screen.
 @MainActor public struct KunioFeedbackBoard: View {
     @State private var model = FeedbackBoardModel()
+    @State private var showStatusFilter = false
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.dismiss) private var dismiss
     public init() {}
@@ -75,14 +76,18 @@ import SwiftUI
                         .accessibilityLabel(feedbackText("Close board"))
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
+                    Button { showStatusFilter = true } label: {
+                        Label(feedbackText("Filter status"), systemImage: model.status == nil ? "line.3.horizontal.decrease" : "line.3.horizontal.decrease.circle.fill")
+                    }
+                    .accessibilityLabel(feedbackText("Filter status"))
+                    .accessibilityValue(model.status?.title ?? feedbackText("All statuses"))
+                    .confirmationDialog(feedbackText("Filter status"), isPresented: $showStatusFilter, titleVisibility: .visible) {
                         Button(feedbackText("All statuses")) { model.status = nil }
                         ForEach(WishStatus.allCases, id: \.self) { status in
-                            Button { model.status = status } label: {
-                                if model.status == status { Label(status.title, systemImage: "checkmark") } else { Text(status.title) }
-                            }
+                            Button(status.title) { model.status = status }
                         }
-                    } label: { Label(feedbackText("Filter status"), systemImage: model.status == nil ? "line.3.horizontal.decrease" : "line.3.horizontal.decrease.circle.fill") }
+                        Button(feedbackText("Cancel"), role: .cancel) { }
+                    }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { model.submissionError = nil; model.showComposer = true } label: { Image(systemName: "plus").fontWeight(.semibold) }

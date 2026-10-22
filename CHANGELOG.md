@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- Open status filtering through an explicit toolbar button and native selection dialog.
+- Expose the active status filter to VoiceOver.
+- Support clearing the filter with All statuses and dismissing the dialog with Cancel.
+
 ## 0.1.1
 
 - Add a close button in the leading toolbar to dismiss the feedback board.

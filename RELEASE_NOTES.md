@@ -1,8 +1,5 @@
-KunioFeedback 0.1.1 improves the native board controls.
+KunioFeedback 0.1.2 fixes the status filter control.
 
-- Top-left X button dismisses the feedback board.
-- Status filtering remains available in the right toolbar next to the add button.
-- The empty-state Suggest a feature button is wider and taller, with headline text and native large prominent button styling.
-- Includes English and German accessibility labels for the close action.
+The toolbar filter button now opens an explicit native selection dialog containing All statuses, Open, Planned, In progress and Done. Choosing a status updates the board filter; All statuses clears it. The active selection is exposed to VoiceOver.
 
-In Xcode, choose File → Packages → Update to Latest Package Versions. If your dependency is pinned to an exact version, select 0.1.1.
+Update in Xcode using File → Packages → Update to Latest Package Versions, or select 0.1.2 if pinned to an exact version.
