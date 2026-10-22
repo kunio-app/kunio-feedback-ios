@@ -1,0 +1,59 @@
+Kunio SDK License 1.0
+
+Copyright (c) 2026 Carlo Maryska (Kunio). All rights reserved.
+
+This is a proprietary software license, not an open-source license.
+By using, modifying or distributing this SDK, you agree to these terms.
+
+1. Permitted use
+Subject to these terms, you may download, copy, compile and use KunioFeedback
+(the "SDK") solely to integrate your own applications with the Kunio service.
+Your applications may be free or commercial. You may modify the SDK as needed
+for that integration, and distribute the SDK in compiled form as an embedded
+part of those applications through app stores or other application distribution
+channels. End users may run those embedded copies as part of your applications.
+You may provide source copies to your employees, contractors and build systems
+only as necessary for these permitted purposes and subject to these same terms.
+You are responsible for their compliance.
+
+2. Restrictions
+Unless separately authorized in writing by the copyright holder, you may not:
+(a) sell, license, sublicense or redistribute the SDK or its modifications as a
+    standalone library, SDK, source package or other separate product;
+(b) publish the SDK or its modifications as your own SDK or under another brand;
+(c) use or adapt the SDK to provide or integrate with a feedback-board service
+    that competes with Kunio, or to operate a standalone competing feedback service;
+(d) remove copyright, license or attribution notices from SDK copies; or
+(e) grant rights to the SDK beyond those expressly permitted by this license.
+A compiled SDK embedded in your application as allowed by section 1 is not a
+standalone redistribution. These restrictions do not limit rights that cannot
+be excluded under applicable law. For copies hosted in a public GitHub repository,
+the rights to view and fork that repository granted by GitHub's applicable terms
+are unaffected; further use remains subject to this license.
+
+3. Ownership and services
+Ownership of the SDK remains with the copyright holder. No trademark rights
+are granted. This license does not grant access to any Kunio account, customer
+data or backend source code. Use of the Kunio service is separately subject to
+its applicable service terms and account permissions. You may retain and
+redistribute existing permitted embedded SDK copies; this does not promise
+continued service availability, support or future SDK releases.
+
+4. Termination
+Your rights under this license terminate if you materially breach it and fail
+to cure the breach within 30 days after written notice from the copyright holder.
+Upon termination, you must cease further SDK use and distribution and remove
+source copies under your control, except copies required by law. This does not
+require recall of previously distributed applications from end users.
+
+5. Disclaimer and liability
+To the fullest extent permitted by applicable law, the SDK is provided "AS IS",
+without warranties of any kind, express or implied, including merchantability,
+fitness for a particular purpose and noninfringement. To the fullest extent
+permitted by applicable law, the copyright holder is not liable for claims or
+damages arising from the SDK or its use. Nothing in this license excludes or
+limits liability or statutory rights that applicable law does not permit to be
+excluded or limited.
+
+For permissions beyond this license, contact the copyright holder through
+https://github.com/kunio-app/kunio-feedback-ios.
